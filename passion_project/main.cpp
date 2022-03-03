@@ -12,6 +12,7 @@ int main(int argc, const char * argv[]) {
     //create game object
     Game *game = new Game();
     
+    //run init
     game->init("game_engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
     //while game is running
     while(game->running())
