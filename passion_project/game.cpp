@@ -10,7 +10,7 @@
 
 Game::Game()
 {
-    
+    counter = 0;
 }
 Game::~Game()
 {
@@ -63,7 +63,8 @@ void Game::handle_events()
 }
 void Game::update()
 {
-    
+    std::cout<< counter << std::endl;
+    counter++;
 }
 void Game::render()
 {
