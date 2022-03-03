@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D0A7B2027D0DB9600B14599 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D0A7B1F27D0DB9600B14599 /* main.cpp */; };
+		0D0A7B2D27D0E17300B14599 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */; };
+		0D0A7B2E27D0E19D00B14599 /* libSDL2-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0D0A7B3227D0E22900B14599 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D0A7B3027D0E22900B14599 /* game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,11 +23,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		0D0A7B2F27D0E19D00B14599 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0D0A7B2E27D0E19D00B14599 /* libSDL2-2.0.0.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D0A7B1C27D0DB9600B14599 /* passion_project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = passion_project; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0A7B1F27D0DB9600B14599 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../usr/local/Cellar/sdl2/2.0.20/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		0D0A7B3027D0E22900B14599 /* game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
+		0D0A7B3127D0E22900B14599 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0A7B2D27D0E17300B14599 /* libSDL2-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +61,7 @@
 			children = (
 				0D0A7B1E27D0DB9600B14599 /* passion_project */,
 				0D0A7B1D27D0DB9600B14599 /* Products */,
+				0D0A7B2B27D0E17300B14599 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +77,18 @@
 			isa = PBXGroup;
 			children = (
 				0D0A7B1F27D0DB9600B14599 /* main.cpp */,
+				0D0A7B3027D0E22900B14599 /* game.cpp */,
+				0D0A7B3127D0E22900B14599 /* game.h */,
 			);
 			path = passion_project;
+			sourceTree = "<group>";
+		};
+		0D0A7B2B27D0E17300B14599 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +101,7 @@
 				0D0A7B1827D0DB9600B14599 /* Sources */,
 				0D0A7B1927D0DB9600B14599 /* Frameworks */,
 				0D0A7B1A27D0DB9600B14599 /* CopyFiles */,
+				0D0A7B2F27D0E19D00B14599 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -119,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D0A7B2027D0DB9600B14599 /* main.cpp in Sources */,
+				0D0A7B3227D0E22900B14599 /* game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +273,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9V7C2M48H9;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/sdl2/2.0.20/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -252,6 +288,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9V7C2M48H9;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/sdl2/2.0.20/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
