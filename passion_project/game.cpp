@@ -6,7 +6,13 @@
 //
 
 #include "game.h"
+#include "texture_handler.h"
+#include "game_object.h"
+
 #include <iostream>
+
+Game_Object* player;
+
 Game::Game()
 {
     counter = 0;
@@ -44,8 +50,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         is_running = false;
     }
     
-    man_texture = IMG_LoadTexture(renderer, "/Users/andrewkuhl/passion_project/assets/man.png");
-    
+    player = new Game_Object(renderer, "/Users/andrewkuhl/passion_project/assets/man.png", 0, 0);
 }
 void Game::handle_events()
 {
@@ -65,13 +70,12 @@ void Game::handle_events()
 }
 void Game::update()
 {
-    std::cout<< counter << std::endl;
-    counter++;
+    player->update();
 }
 void Game::render()
 {
     SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, man_texture, NULL, NULL);
+    player->render();
     SDL_RenderPresent(renderer);
 }
 void Game::clean()

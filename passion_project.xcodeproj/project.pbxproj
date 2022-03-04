@@ -13,6 +13,8 @@
 		0D0A7B3227D0E22900B14599 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D0A7B3027D0E22900B14599 /* game.cpp */; };
 		0DC577B227D1C79200B983D4 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */; };
 		0DC577B327D1C89300B983D4 /* libSDL2_image-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0DC577B627D1D74B00B983D4 /* texture_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC577B427D1D74B00B983D4 /* texture_handler.cpp */; };
+		0DC577B927D1D8C600B983D4 /* game_object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC577B727D1D8C600B983D4 /* game_object.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,10 @@
 		0D0A7B3127D0E22900B14599 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		0DC577B027D1C5B000B983D4 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_image-2.0.0.dylib"; path = "../../../usr/local/Cellar/sdl2_image/2.0.5/lib/libSDL2_image-2.0.0.dylib"; sourceTree = "<group>"; };
+		0DC577B427D1D74B00B983D4 /* texture_handler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = texture_handler.cpp; sourceTree = "<group>"; };
+		0DC577B527D1D74B00B983D4 /* texture_handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = texture_handler.h; sourceTree = "<group>"; };
+		0DC577B727D1D8C600B983D4 /* game_object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = game_object.cpp; sourceTree = "<group>"; };
+		0DC577B827D1D8C600B983D4 /* game_object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game_object.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 				0D0A7B1F27D0DB9600B14599 /* main.cpp */,
 				0D0A7B3027D0E22900B14599 /* game.cpp */,
 				0D0A7B3127D0E22900B14599 /* game.h */,
+				0DC577B427D1D74B00B983D4 /* texture_handler.cpp */,
+				0DC577B527D1D74B00B983D4 /* texture_handler.h */,
+				0DC577B727D1D8C600B983D4 /* game_object.cpp */,
+				0DC577B827D1D8C600B983D4 /* game_object.h */,
 			);
 			path = passion_project;
 			sourceTree = "<group>";
@@ -156,6 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DC577B927D1D8C600B983D4 /* game_object.cpp in Sources */,
+				0DC577B627D1D74B00B983D4 /* texture_handler.cpp in Sources */,
 				0D0A7B2027D0DB9600B14599 /* main.cpp in Sources */,
 				0D0A7B3227D0E22900B14599 /* game.cpp in Sources */,
 			);
