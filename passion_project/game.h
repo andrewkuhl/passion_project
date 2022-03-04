@@ -9,6 +9,7 @@
 #define __GAME_H__
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <stdio.h>
 
 class Game
@@ -19,6 +20,7 @@ private:
     SDL_Window* window;
     SDL_Renderer* renderer;
     int counter;
+    
 protected:
     
 public:
@@ -35,6 +37,7 @@ public:
     
     bool running();
     
+    SDL_Texture* man_texture;
 };
 
 #endif //__GAME_H__

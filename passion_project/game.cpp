@@ -7,7 +7,6 @@
 
 #include "game.h"
 #include <iostream>
-
 Game::Game()
 {
     counter = 0;
@@ -44,6 +43,9 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     {
         is_running = false;
     }
+    
+    man_texture = IMG_LoadTexture(renderer, "/Users/andrewkuhl/passion_project/assets/man.png");
+    
 }
 void Game::handle_events()
 {
@@ -69,6 +71,7 @@ void Game::update()
 void Game::render()
 {
     SDL_RenderClear(renderer);
+    SDL_RenderCopy(renderer, man_texture, NULL, NULL);
     SDL_RenderPresent(renderer);
 }
 void Game::clean()

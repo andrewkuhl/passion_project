@@ -11,6 +11,8 @@
 		0D0A7B2D27D0E17300B14599 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */; };
 		0D0A7B2E27D0E19D00B14599 /* libSDL2-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0D0A7B3227D0E22900B14599 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D0A7B3027D0E22900B14599 /* game.cpp */; };
+		0DC577B227D1C79200B983D4 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */; };
+		0DC577B327D1C89300B983D4 /* libSDL2_image-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +32,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0D0A7B2E27D0E19D00B14599 /* libSDL2-2.0.0.dylib in Embed Libraries */,
+				0DC577B327D1C89300B983D4 /* libSDL2_image-2.0.0.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,6 +45,8 @@
 		0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../usr/local/Cellar/sdl2/2.0.20/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 		0D0A7B3027D0E22900B14599 /* game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
 		0D0A7B3127D0E22900B14599 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		0DC577B027D1C5B000B983D4 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_image-2.0.0.dylib"; path = "../../../usr/local/Cellar/sdl2_image/2.0.5/lib/libSDL2_image-2.0.0.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D0A7B2D27D0E17300B14599 /* libSDL2-2.0.0.dylib in Frameworks */,
+				0DC577B227D1C79200B983D4 /* libSDL2_image-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				0D0A7B1E27D0DB9600B14599 /* passion_project */,
+				0DC577B027D1C5B000B983D4 /* assets */,
 				0D0A7B1D27D0DB9600B14599 /* Products */,
 				0D0A7B2B27D0E17300B14599 /* Frameworks */,
 			);
@@ -86,6 +93,7 @@
 		0D0A7B2B27D0E17300B14599 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */,
 				0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */,
 			);
 			name = Frameworks;
@@ -270,13 +278,21 @@
 		0D0A7B2427D0DB9600B14599 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = assets;
 				DEVELOPMENT_TEAM = 9V7C2M48H9;
-				ENABLE_HARDENED_RUNTIME = YES;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl2/,
+					/usr/local/Cellar/sdl2_image/,
+				);
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/sdl2/2.0.20/lib,
+					/usr/local/Cellar/sdl2_image/2.0.5/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -285,13 +301,21 @@
 		0D0A7B2527D0DB9600B14599 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = assets;
 				DEVELOPMENT_TEAM = 9V7C2M48H9;
-				ENABLE_HARDENED_RUNTIME = YES;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl2/,
+					/usr/local/Cellar/sdl2_image/,
+				);
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/sdl2/2.0.20/lib,
+					/usr/local/Cellar/sdl2_image/2.0.5/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
