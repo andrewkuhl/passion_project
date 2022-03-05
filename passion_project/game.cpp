@@ -8,6 +8,7 @@
 #include "game.h"
 #include "texture_handler.h"
 #include "ecs/components.h"
+#include "vector2d.h"
 
 #include <iostream>
 
@@ -15,7 +16,6 @@ SDL_Renderer* Game::renderer = nullptr;
 
 Manager manager;
 auto& player(manager.add_entity());
-
 
 
 Game::Game()
@@ -55,7 +55,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         is_running = false;
     }
     
-    player.add_component<PositionComponent>();
+    player.add_component<TransformComponent>();
     player.add_component<SpriteComponent>("/Users/andrewkuhl/passion_project/assets/man.png");
 }
 void Game::handle_events()
@@ -78,6 +78,8 @@ void Game::update()
 {
     manager.refresh();
     manager.update();
+    player.get_component<TransformComponent>().position.add(Vector2D(1,2));
+    
 }
 void Game::render()
 {

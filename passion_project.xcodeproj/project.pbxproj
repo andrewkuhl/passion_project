@@ -11,6 +11,7 @@
 		0D0A7B2D27D0E17300B14599 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */; };
 		0D0A7B2E27D0E19D00B14599 /* libSDL2-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0D0A7B3227D0E22900B14599 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D0A7B3027D0E22900B14599 /* game.cpp */; };
+		0DA8E52C27D3FE8300C6FF7B /* vector2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8E52B27D3FE8300C6FF7B /* vector2d.cpp */; };
 		0DC577B227D1C79200B983D4 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */; };
 		0DC577B327D1C89300B983D4 /* libSDL2_image-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0DC577B627D1D74B00B983D4 /* texture_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DC577B427D1D74B00B983D4 /* texture_handler.cpp */; };
@@ -45,12 +46,14 @@
 		0D011F1F27D2A9560044416A /* ecs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ecs.h; sourceTree = "<group>"; };
 		0D011F2127D2B1220044416A /* components.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = components.h; sourceTree = "<group>"; };
 		0D011F2327D2B7BA0044416A /* sprite_component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sprite_component.h; sourceTree = "<group>"; };
-		0D011F2427D2B7CA0044416A /* position_component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = position_component.h; sourceTree = "<group>"; };
+		0D011F2427D2B7CA0044416A /* transform_component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = transform_component.h; sourceTree = "<group>"; };
 		0D0A7B1C27D0DB9600B14599 /* passion_project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = passion_project; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0A7B1F27D0DB9600B14599 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0D0A7B2C27D0E17300B14599 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../usr/local/Cellar/sdl2/2.0.20/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 		0D0A7B3027D0E22900B14599 /* game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
 		0D0A7B3127D0E22900B14599 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		0DA8E52A27D3FD0200C6FF7B /* vector2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vector2d.h; sourceTree = "<group>"; };
+		0DA8E52B27D3FE8300C6FF7B /* vector2d.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vector2d.cpp; sourceTree = "<group>"; };
 		0DC577B027D1C5B000B983D4 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_image-2.0.0.dylib"; path = "../../../usr/local/Cellar/sdl2_image/2.0.5/lib/libSDL2_image-2.0.0.dylib"; sourceTree = "<group>"; };
 		0DC577B427D1D74B00B983D4 /* texture_handler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = texture_handler.cpp; sourceTree = "<group>"; };
@@ -78,7 +81,7 @@
 				0D011F2127D2B1220044416A /* components.h */,
 				0D011F1F27D2A9560044416A /* ecs.h */,
 				0D011F2327D2B7BA0044416A /* sprite_component.h */,
-				0D011F2427D2B7CA0044416A /* position_component.h */,
+				0D011F2427D2B7CA0044416A /* transform_component.h */,
 			);
 			path = ecs;
 			sourceTree = "<group>";
@@ -112,6 +115,8 @@
 				0DC577B527D1D74B00B983D4 /* texture_handler.h */,
 				0DC577B727D1D8C600B983D4 /* game_object.cpp */,
 				0DC577B827D1D8C600B983D4 /* game_object.h */,
+				0DA8E52A27D3FD0200C6FF7B /* vector2d.h */,
+				0DA8E52B27D3FE8300C6FF7B /* vector2d.cpp */,
 			);
 			path = passion_project;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				0DC577B627D1D74B00B983D4 /* texture_handler.cpp in Sources */,
 				0D0A7B2027D0DB9600B14599 /* main.cpp in Sources */,
 				0D0A7B3227D0E22900B14599 /* game.cpp in Sources */,
+				0DA8E52C27D3FE8300C6FF7B /* vector2d.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
