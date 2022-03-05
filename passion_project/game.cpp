@@ -7,11 +7,16 @@
 
 #include "game.h"
 #include "texture_handler.h"
-#include "game_object.h"
+#include "ecs/components.h"
 
 #include <iostream>
 
-Game_Object* player;
+SDL_Renderer* Game::renderer = nullptr;
+
+Manager manager;
+auto& player(manager.add_entity());
+
+
 
 Game::Game()
 {
@@ -50,7 +55,8 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         is_running = false;
     }
     
-    player = new Game_Object(renderer, "/Users/andrewkuhl/passion_project/assets/man.png", 0, 0);
+    player.add_component<PositionComponent>();
+    player.add_component<SpriteComponent>("/Users/andrewkuhl/passion_project/assets/man.png");
 }
 void Game::handle_events()
 {
@@ -70,12 +76,13 @@ void Game::handle_events()
 }
 void Game::update()
 {
-    player->update();
+    manager.refresh();
+    manager.update();
 }
 void Game::render()
 {
     SDL_RenderClear(renderer);
-    player->render();
+    manager.draw();
     SDL_RenderPresent(renderer);
 }
 void Game::clean()

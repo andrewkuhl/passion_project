@@ -18,7 +18,6 @@ class Game
 private:
     bool is_running;
     SDL_Window* window;
-    SDL_Renderer* renderer;
     int counter;
     
 protected:
@@ -26,6 +25,8 @@ protected:
 public:
     Game();
     ~Game();
+    
+    static SDL_Renderer* renderer;
     
     void init(const char* title, int xpos, int ypos, int width, int heigth,
               bool fullscreen);
