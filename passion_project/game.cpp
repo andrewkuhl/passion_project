@@ -13,6 +13,7 @@
 #include <iostream>
 
 SDL_Renderer* Game::renderer = nullptr;
+SDL_Event Game::event;
 
 Manager manager;
 auto& player(manager.add_entity());
@@ -56,12 +57,13 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     }
     
     player.add_component<TransformComponent>();
-    player.add_component<SpriteComponent>("/Users/andrewkuhl/passion_project/assets/man.png");
+    player.add_component<SpriteComponent>("/Users/andrewkuhl/passion_project/assets/man_s.png");
+    player.add_component<KeyboardComponent>();
 }
 void Game::handle_events()
 {
-    SDL_Event event;
     SDL_PollEvent(&event);
+    
     
     switch(event.type)
     {
@@ -77,9 +79,7 @@ void Game::handle_events()
 void Game::update()
 {
     manager.refresh();
-    manager.update();
-    player.get_component<TransformComponent>().position.add(Vector2D(1,2));
-    
+    manager.update();    
 }
 void Game::render()
 {

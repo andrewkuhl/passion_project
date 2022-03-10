@@ -10,6 +10,7 @@
 #include "ecs.h"
 #include "transform_component.h"
 #include "sprite_component.h"
+#include "keyboard_component.h"
 
 
 

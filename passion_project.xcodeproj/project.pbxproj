@@ -54,6 +54,7 @@
 		0D0A7B3127D0E22900B14599 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		0DA8E52A27D3FD0200C6FF7B /* vector2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vector2d.h; sourceTree = "<group>"; };
 		0DA8E52B27D3FE8300C6FF7B /* vector2d.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vector2d.cpp; sourceTree = "<group>"; };
+		0DA8E52D27D4050100C6FF7B /* keyboard_component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keyboard_component.h; sourceTree = "<group>"; };
 		0DC577B027D1C5B000B983D4 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		0DC577B127D1C79200B983D4 /* libSDL2_image-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_image-2.0.0.dylib"; path = "../../../usr/local/Cellar/sdl2_image/2.0.5/lib/libSDL2_image-2.0.0.dylib"; sourceTree = "<group>"; };
 		0DC577B427D1D74B00B983D4 /* texture_handler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = texture_handler.cpp; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 				0D011F1F27D2A9560044416A /* ecs.h */,
 				0D011F2327D2B7BA0044416A /* sprite_component.h */,
 				0D011F2427D2B7CA0044416A /* transform_component.h */,
+				0DA8E52D27D4050100C6FF7B /* keyboard_component.h */,
 			);
 			path = ecs;
 			sourceTree = "<group>";

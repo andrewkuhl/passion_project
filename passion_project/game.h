@@ -39,6 +39,7 @@ public:
     bool running();
     
     SDL_Texture* man_texture;
+    static SDL_Event event;
 };
 
 #endif //__GAME_H__
